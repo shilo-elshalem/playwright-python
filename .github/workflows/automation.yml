@@ -32,6 +32,12 @@ jobs:
           source .venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
+          
+      - name: Install Playwright browsers
+        shell: bash
+        run: |
+          source .venv/bin/activate
+          playwright install
 
       # 4 Run pytest under xvfb, save Allure results
   # xvfb-run pytest -m devRun --alluredir=allure-results
